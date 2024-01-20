@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #434343;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.center {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* Activar perspectiva y mantener proporción de fondo 3d */
+  transform: perspective(160px);
+  transform-style: preserve-3d;
+}
+
+.card {
+  position: absolute;
+  border: solid 1px white;
+  height: 200px;
+  width: 200px;
+  border-radius: 0.3rem;
+  background-color: #f5f7f8;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
+  /* animación de carrousel */
+  animation: switch 4.5s ease-in-out infinite both;
+}
+
+.card-cabecera {
+  overflow: hidden;
+  width: 100%;
+  height: 20%;
+  background-color: #f4ce14;
+  /* border: solid 1px green; */
+}
+.contenido {
+  margin-top: 5%;
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+.linea {
+  height: 5%;
+  background-color: #495e57;
+}
+
+.card-two {
+  animation-delay: 1.5s;
+}
+.card-three {
+  animation-delay: 3s;
+}
+
+@keyframes switch {
+  0% {
+    transform: translate3d(0, 0, 0);
+    box-shadow: 4px 8px 12px 0px rgba(0, 0, 0, 0.2);
+  }
+  33.33% {
+    transform: translate3d(145px, 0, -45px);
+    box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.2);
+  }
+  66.66% {
+    transform: translate3d(-145px, 0, -45px);
+    box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.2);
+  }
+}
